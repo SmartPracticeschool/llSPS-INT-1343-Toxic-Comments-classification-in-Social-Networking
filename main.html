@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
+  padding:0;
+  margin:0;
+  background: linear-gradient(90.54224394649964deg, #5680E9, #84CEEB, #5AB9EA,#8860D0);}
+
+
+.form-section {
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 10vh;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: -3px 4px 6px 0px rgba(185, 185, 185, 0.3);
+            position: relative;
+}
+  
+        .form-section label {
+            display: block;
+            font-size: 16px;
+        }
+
+        .form-section input {
+            display: block;
+            width: 95%;
+            padding: 7px;
+            border-radius: 3px;
+            border: 1px solid #aaaaaa;
+            font-size: 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+
+            outline: none;
+        }
+        [type="submit"].submit {
+            padding: 10px 7px;
+            border-radius: 20px;
+            background: linear-gradient(90.54224394649964deg, rgb(41, 72, 151), #84CEEB, rgb(36, 163, 226));
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            border: none !important;
+            margin: 0 auto;
+        }
+
+header{
+  background:linear-gradient(90.54224394649964deg, #5680E9, #84CEEB, #5AB9EA,#8860D0););
+  color: #ffffff;
+  padding-top:30px;
+    min-height:70px;
+    border-bottom: #ffffff  10px solid;
+}
+
+/* This controls the style of the result */
+div {
+    background-color:#ffffff;
+    width: 500px;
+    border: 2px solid rgb(36, 163, 226);
+    padding: 1px;
+    margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 150px;
+  margin-left: 510px;
+}
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color:#fff;
+  background-image: url("sprinkles.gif");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: rgb(9, 245, 225);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: rgb(12, 240, 240);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: rgb(239, 243, 11);
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+
+
+
+</style>
+</head>
+<body>
+  <header>
+        <h1 align="center"><strong>Toxic Comment Classifier</h1></strong></h1>
+  </header>
+<div class = "form-section"> 
+<form method="POST">
+  <input type="text"  align = "Center" placeholder="Enter a toxic comment" name="text" id="rcorners1" required>
+  <input type="submit" class="submit">
+</form></div>
+
+<div >
+
+Result:<br />
+<ul>
+<li>Toxic: {{ pred_toxic }}</li>
+<li>Severely toxic: {{ pred_severe_toxic }}</li> 
+<li>Identity hate: {{ pred_identity_hate }} </li>
+<li>Insult: {{ pred_insult }}</li>
+<li>Obscene: {{ pred_obscene }}</li>
+<li>Threat: {{ pred_threat }} </li>
+</ul>
+</div>
+<br/>
+  <h1 align="center">About Us</h1>
+  <p  align="center">We built a model to classify the comment into various categories of toxic comments</p>
+  <p  align="center">the classes are toxic, severely, Identity hate, Insult, Obscene, Threat. And then we deployed our model into a web application using Flask Frame work.</p>
+
+
+<h2 style="text-align:center"  align="center" >Our Team</h2>
+
+        <h2  align="center" >Sai Ramya kasumurthy</h2>
+        <p class="title"  align="center" >Flask development</p>
+        <p  align="center">Developed the flask web application for the toxic classification using Flask,HTML and CSS</p>
+        <p  align="center" >ramyakasumurthy@gmail.com</p>
+        <p><button class="button"><a href="https://mail.google.com/">Contact <b>EMAIL?</b> </a></button></p>
+
+
+        <h2  align="center" >Prathyusha Netheti</h2>
+        <p class="title"  align="center" >Model Building</p>
+        <p  align="center" >built the model to predict the comment and classify into the different categories</p>
+        <p  align="center">prathyushanetheti@gmail.com</p>
+        <p><button class="button"><a href="https://mail.google.com/">Contact <b>EMAIL?</b></a></button></p>
+
+        <h2  align="center" >Amulya Parvatheneni</h2>
+        <p class="title"  align="center" >Text preprocessing</p>
+        <p  align="center" >cleaned the given data and preprocessed it with tokenization and created bag of words and splitted the data into training and testing</p>
+        <p  align="center" >amulya666777@gmail.com</p>
+        <p><button class="button"><a href="https://mail.google.com/">Contact <b>EMAIL?</b> </a></button></p>
+
+    
+        <h2  align="center" >Venkatesh reddy munagala</h2>
+        <p class="title"  align="center">Data handling and visualisation</p>
+        <p  align="center" >venkysmart55@gmail.com</p>
+        <p><button class="button"><a href="https://mail.google.com/">Contact via <b>EMAIL?</b></a></button></p>
+
+
+
+
+
+</body>
+</html>
+
